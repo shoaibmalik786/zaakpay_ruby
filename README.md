@@ -23,6 +23,10 @@ And then execute:
 
     $ bundle
 
+And run this command to create initializer file
+
+    $ rails generate zaakpay_ruby:install
+
 Or install it yourself as:
 
     $ gem install zaakpay_ruby
