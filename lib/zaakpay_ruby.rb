@@ -1,4 +1,4 @@
-require "ZaakpayRuby_ruby/version"
+require "Zaakpay_ruby/version"
 
 module ZaakpayRubyRuby
   class Configuration
