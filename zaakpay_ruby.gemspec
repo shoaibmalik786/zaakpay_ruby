@@ -10,19 +10,11 @@ Gem::Specification.new do |spec|
   spec.email         = ["shoaib2109@gmail.com"]
 
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
+    spec.metadata['allowed_push_host'] = "http://rubygems.org"
   end
 
   spec.summary       = %q{Zaakpay payment gateway gem for ruby}
-  spec.description   = %q{zaakpay_ruby is a ruby gem that demonstrates the integration of a ruby-on-rails application with Zaakpay's api.
-                        A payment Gateway gem with easy installation and integration with rails 3, 4
-                        -Payment Gateway Services.
-                        -More than you want payment options with.
-                        -major credit cards, debit cards and 52 netbanking banks.
-                        -Fastest Merchant Approval.
-                        -Smooth integration across 22 platforms.
-                        -Start in minutes.
-                        -Multi-Currency Processing Service with 13 currencies.}
+  spec.description   = %q{zaakpay_ruby is a ruby gem that demonstrates the integration of a ruby-on-rails application with Zaakpay's api.}
   spec.homepage      = "https://github.com/shoaibmalik786/zaakpay_ruby"
   spec.license       = "MIT"
 
