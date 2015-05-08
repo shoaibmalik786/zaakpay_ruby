@@ -14,8 +14,16 @@ Gem::Specification.new do |spec|
   end
 
   spec.summary       = %q{Zaakpay payment gateway gem for ruby}
-  # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "https://rubygems.org/gems/zaakpay_ruby"
+  spec.description   = %q{zaakpay_ruby is a ruby gem that demonstrates the integration of a ruby-on-rails application with Zaakpay's api.
+                        A payment Gateway gem with easy installation and integration with rails 3, 4
+                        -Payment Gateway Services.
+                        -More than you want payment options with.
+                        -major credit cards, debit cards and 52 netbanking banks.
+                        -Fastest Merchant Approval.
+                        -Smooth integration across 22 platforms.
+                        -Start in minutes.
+                        -Multi-Currency Processing Service with 13 currencies.}
+  spec.homepage      = "https://github.com/shoaibmalik786/zaakpay_ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
