@@ -34,13 +34,13 @@ ZaakpayRuby::Request.new(params)
 
 params would be the hash of parameters. Below are the required and optional parameters to pass in the request.
 
-_________________________________________________________________________________
-#Parameter	           Optional/Mandatory	    Validation	         Allowed Values
-#________________________________________________________________________________
+
+Parameter	           Optional/Mandatory	    Validation	         Allowed Values
+
 merchantIdentifier	         M	           alphanumeric	           Zaakpay's unique
                                                                    identifier for your
                                                                    website
-------------------------------------------------------------------------------------------------
+
 orderId	                     M	           max 20 alphanumeric,    Your unique transaction
                                            must be unique per      identifier
                                            website,we do not
