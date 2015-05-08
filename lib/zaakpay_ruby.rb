@@ -1,6 +1,6 @@
 # require "ZaakpayRuby_ruby/version"
 
-module ZaakpayRubyRuby
+module ZaakpayRuby
   class Configuration
     attr_accessor :secret_key, :log_level
 
