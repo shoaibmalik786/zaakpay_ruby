@@ -1,4 +1,5 @@
 # ZaakpayRuby
+zaakpay_ruby is a ruby gem that demonstrates the integration of a ruby-on-rails application with Zaakpay's api.
 
 A payment Gateway gem with easy installation and integration with rails 3, 4
 -Payment Gateway Services.
@@ -27,23 +28,27 @@ Or install it yourself as:
     $ gem install zaakpay_ruby
 
 ## Usage
-First and foremost, you have to signup on the https://zaakpay.com for getting merchant_id and secret key
+First and foremost, you have to signup on the https://zaakpay.com for getting merchant_id and secret_key
+
+For setting your account, go to https://www.zaakpay.com/developers#view3
+Save your settings as per your requirements.
 
 For transaction by buyer
-First you have to make a request to the zaakpay by:
-ZaakpayRuby::Request.new(params)
 
-params would be the hash of parameters. Below are the required and optional parameters to pass in the request.
+First you have to make a request to the zaakpay by:
+  request = ZaakpayRuby::Request.new(params)
+
+Params would be the hash of parameters. Below are the required and optional parameters to pass in the request.
 For more information about the request parameters, go through the link provided below.
 
-https://www.zaakpay.com/developers#viewA
+   https://www.zaakpay.com/developers#viewA
 
 Get response by using this method
-response = ZaakpayRuby::Response.new(request.raw_post)
+  response = ZaakpayRuby::Response.new(request.raw_post)
 
 For response parameters, go to the
 
-https://www.zaakpay.com/developers#viewA_1
+  https://www.zaakpay.com/developers#viewA_1
 
 
 ## Development
