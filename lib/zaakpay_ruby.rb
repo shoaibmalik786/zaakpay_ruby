@@ -1,4 +1,4 @@
-# require "Zaakpay_ruby/version"
+require "zaakpay_ruby/version"
 
 module ZaakpayRuby
 
