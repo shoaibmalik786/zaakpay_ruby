@@ -27,24 +27,24 @@ Or install it yourself as:
     $ gem install zaakpay_ruby
 
 ## Usage
+First and foremost, you have to signup on the https://zaakpay.com for getting merchant_id and secret key
 
+For transaction by buyer
 First you have to make a request to the zaakpay by:
-
 ZaakpayRuby::Request.new(params)
 
 params would be the hash of parameters. Below are the required and optional parameters to pass in the request.
+For more information about the request parameters, go through the link provided below.
 
+https://www.zaakpay.com/developers#viewA
 
-Parameter	           Optional/Mandatory	    Validation	         Allowed Values
+Get response by using this method
+response = ZaakpayRuby::Response.new(request.raw_post)
 
-merchantIdentifier	         M	           alphanumeric	           Zaakpay's unique
-                                                                   identifier for your
-                                                                   website
+For response parameters, go to the
 
-orderId	                     M	           max 20 alphanumeric,    Your unique transaction
-                                           must be unique per      identifier
-                                           website,we do not
-                                           accept duplicate
+https://www.zaakpay.com/developers#viewA_1
+
 
 ## Development
 
