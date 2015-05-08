@@ -1,6 +1,8 @@
-# require "ZaakpayRuby_ruby/version"
+require "Zaakpay_ruby/version"
 
 module ZaakpayRuby
+
+  # This is class for initialize the secret key
   class Configuration
     attr_accessor :secret_key, :log_level
 
@@ -27,7 +29,6 @@ module ZaakpayRuby
   # return value: HMAC-SHA-256 checksum usign the Key
   def self.generate_checksum(params_hash)
     #sorted_params = self.sort_params(params_hash)
-
     paramsstring = ""
     params_hash.each {|key, value|
       paramsstring += "'" + value.to_s + "'"
@@ -35,10 +36,12 @@ module ZaakpayRuby
     checksum = OpenSSL::HMAC.hexdigest('sha256', ZaakpayRuby.configuration.secret_key, paramsstring)
   end
 
+
   # This is a helper method for generating ZaakpayRuby checksum
   # It sorts the parameters hash in ascending order of the keys
   # arguments: a parameters hash
   # return value: a hash with sorted in ascending order of keys
+  # It is not using now but would keep for the future
   def self.sort_params(params_hash)
     sorted_params_hash = {}
     sorted_keys = params_hash.keys.sort{|x,y| x <=> y}
@@ -48,19 +51,7 @@ module ZaakpayRuby
     sorted_params_hash
   end
 
-
-
-  #
   # This class is for wrappers around the ZaakpayRuby request.
-  #
-  # Checksum is generated in the constructor, so
-  #  once instantiated, object.checksum gives the value of the checksum
-  #
-  # Exposed attributes:
-  #  params:     paramters hash, w/o the checksum
-  #  all_params: paramters hash w/ the checksum
-  #  checksum:   checksume generated for the params
-  #
   class Request
     attr_reader :params, :all_params, :checksum
 
@@ -72,16 +63,7 @@ module ZaakpayRuby
 
   end
 
-  #
   # This class creates wrappers around the Zaakpay response
-  #
-  # Checksum validation takes place within the `valid?` method.
-  #
-  #  Exposed attributes:
-  #  all_params:      POST from Zaakpay as a hash
-  #  params:          all_params minus checksum
-  #  posted_checksum: checksume POSTed from Zaakpay
-  #  checksum:        checksum generated using the POSTed params and secret
   class Response
     attr_reader :params, :all_params, :posted_checksum, :checksum
 
