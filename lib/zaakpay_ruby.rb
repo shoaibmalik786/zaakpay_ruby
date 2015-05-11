@@ -79,4 +79,11 @@ module ZaakpayRuby
     end
 
   end
+
+  class Transaction
+    def sale(options={})
+      zr = ZaakpayRuby::Request.new(options)
+      return zr
+    end
+  end
 end

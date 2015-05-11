@@ -3,11 +3,17 @@ zaakpay_ruby is a ruby gem that demonstrates the integration of a ruby-on-rails 
 
 A payment Gateway gem with easy installation and integration with rails 3, 4
 -Payment Gateway Services.
+
 -More than you want payment options with.
+
 -major credit cards, debit cards and 52 netbanking banks.
+
 -Fastest Merchant Approval.
+
 -Smooth integration across 22 platforms.
+
 -Start in minutes.
+
 -Multi-Currency Processing Service with 13 currencies.
 
 
