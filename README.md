@@ -45,15 +45,88 @@ Save your settings as per your requirements.
 
 For transaction by buyer
 
-First you have to make a request to the zaakpay by:
-  request = ZaakpayRuby::Request.new(params)
+To Make a transaction using debit card or credit card.
 
-Params would be the hash of parameters. Below are the required and optional parameters to pass in the request.
+  result = ZaakpayRuby::Transaction.sale(
+    merchantIdentifier: 'Merchant Id of Zaakpay merchant account',
+    orderId: 'Order675786, this must be unique',
+    returnUrl: 'url where you want the response',
+    buyerEmail: 'a@b.com',
+    buyerFirstName: 'First name',
+    buyerLastName: 'Last name',
+    buyerAddress: 'Address',
+    buyerCity: 'city',
+    buyerState: 'state',
+    buyerCountry: 'country',
+    buyerPincode: '201012',
+    buyerPhoneNumber: '9874563210',
+    txnType: '1',
+    zpPayOption: '1',
+    mode: '1',
+    currency: 'INR',
+    amount: '200000, amount should be in Paisa',
+    merchantIpAddress: request.remote_ip,
+    purpose: '1',
+    productDescription: 'Test',
+    shipToAddress: 'Shipping Address',
+    shipToCity: 'shipping city',
+    shipToState: 'shipping state',
+    shipToCountry: 'shipping country',
+    shipToPincode: 'shipping pincode',
+    shipToPhoneNumber: 'shipping phone number',
+    shipToFirstname: 'Ship To First Name',
+    shipToLastname: 'Ship To Last Name',
+    txnDate: '2015-05-11'
+  )
+
 For more information about the request parameters, go through the link provided below.
 
-   https://www.zaakpay.com/developers#viewA
+  https://www.zaakpay.com/developers#viewA
+
+After that store the result with checksum from zaakpay api as
+
+  @zaakpay_data = result
+This @zaakpay_data must pass in the form.
+
+For ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Zaakpay</title>
+
+</head>
+<body onload="javascript:submitForm()">
+<center>
+<table width="500px;">
+	<tr>
+		<td align="center" valign="middle">Do Not Refresh or Press Back <br/> Redirecting to Zaakpay</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<form action="https://api.zaakpay.com/transact" method="post">
+         <% @zaakpay_data.each do |key, value| %>
+            <input type="hidden" name="<%= key %>" value="<%= value %>" />
+         <% end %>
+			</form>
+		</td>
+	</tr>
+</table>
+
+</center>
+<script type="text/javascript">
+  function submitForm(){
+		var form = document.forms[0];
+		form.submit();
+	}
+</script>
+</body>
+
+
 
 Get response by using this method
+This should be in the action of the return Url
   response = ZaakpayRuby::Response.new(request.raw_post)
 
 For response parameters, go to the
