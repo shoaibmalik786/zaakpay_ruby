@@ -48,6 +48,7 @@ For transaction by buyer
 To Make a transaction using debit card or credit card.
 
   result = ZaakpayRuby::Transaction.sale(
+
     merchantIdentifier: 'Merchant Id of Zaakpay merchant account',
     orderId: 'Order675786, this must be unique',
     returnUrl: 'url where you want the response',
@@ -58,7 +59,7 @@ To Make a transaction using debit card or credit card.
     buyerCity: 'city',
     buyerState: 'state',
     buyerCountry: 'country',
-    buyerPincode: '201012',
+    buyerPincode: 'zipcode',
     buyerPhoneNumber: '9874563210',
     txnType: '1',
     zpPayOption: '1',
@@ -90,38 +91,38 @@ This @zaakpay_data must pass in the form.
 
 For ex:
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Zaakpay</title>
+    <!DOCTYPE html>
 
-</head>
-<body onload="javascript:submitForm()">
-<center>
-<table width="500px;">
-	<tr>
-		<td align="center" valign="middle">Do Not Refresh or Press Back <br/> Redirecting to Zaakpay</td>
-	</tr>
-	<tr>
-		<td align="center" valign="middle">
-			<form action="https://api.zaakpay.com/transact" method="post">
-         <% @zaakpay_data.each do |key, value| %>
-            <input type="hidden" name="<%= key %>" value="<%= value %>" />
-         <% end %>
-			</form>
-		</td>
-	</tr>
-</table>
-
-</center>
-<script type="text/javascript">
-  function submitForm(){
-		var form = document.forms[0];
-		form.submit();
-	}
-</script>
-</body>
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title>Zaakpay</title>
+        </head>
+        <body onload="javascript:submitForm()">
+        <center>
+        <table width="500px;">
+    	    <tr>
+    		    <td align="center" valign="middle">Do Not Refresh or Press Back
+    		    <br/> Redirecting to Zaakpay</td>
+    	    </tr>
+    	    <tr>
+    		    <td align="center" valign="middle">
+    			    <form action="https://api.zaakpay.com/transact" method="post">
+                        <% @zaakpay_data.each do |key, value| %>
+                          <input type="hidden" name="<%= key %>" value="<%= value %>" />
+                        <% end %>
+    			   </form>
+    		    </td>
+	        </tr>
+        </table>
+        </center>
+        <script type="text/javascript">
+          function submitForm(){
+        		var form = document.forms[0];
+        		form.submit();
+        	}
+        </script>
+    </body>
 
 
 
