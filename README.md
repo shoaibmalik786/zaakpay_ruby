@@ -99,30 +99,31 @@ For ex:
             <title>Zaakpay</title>
         </head>
         <body onload="javascript:submitForm()">
-        <center>
-        <table width="500px;">
-    	    <tr>
-    		    <td align="center" valign="middle">Do Not Refresh or Press Back
-    		    <br/> Redirecting to Zaakpay</td>
-    	    </tr>
-    	    <tr>
-    		    <td align="center" valign="middle">
-    			    <form action="https://api.zaakpay.com/transact" method="post">
-                        <% @zaakpay_data.each do |key, value| %>
-                          <input type="hidden" name="<%= key %>" value="<%= value %>" />
-                        <% end %>
-    			   </form>
-    		    </td>
-	        </tr>
-        </table>
-        </center>
-        <script type="text/javascript">
-          function submitForm(){
-        		var form = document.forms[0];
-        		form.submit();
-        	}
-        </script>
-    </body>
+	        <center>
+		        <table width="500px;">
+		    	    <tr>
+		    		    <td align="center" valign="middle">Do Not Refresh or Press Back
+		    		    <br/> Redirecting to Zaakpay</td>
+		    	    </tr>
+		    	    <tr>
+		    		    <td align="center" valign="middle">
+		    			    <form action="https://api.zaakpay.com/transact" method="post">
+		                        <% @zaakpay_data.each do |key, value| %>
+		                          <input type="hidden" name="<%= key %>" value="<%= value %>" />
+		                        <% end %>
+		    			   </form>
+		    		    </td>
+			        </tr>
+		        </table>
+	        </center>
+	        <script type="text/javascript">
+	          function submitForm(){
+	        		var form = document.forms[0];
+	        		form.submit();
+	        	}
+	        </script>
+    		</body>
+    </html>
 
 
 
