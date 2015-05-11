@@ -1,8 +1,9 @@
 ## Donations and sponsoring
 
-If you want to support this project please visit the Gittip and Flattr pages.
+If you want to support this project please visit the Gratipay and Flattr pages.
 
-[![Gittip donate button](https://img.shields.io/gratipay/shoaibmalik786.svg)](https://gratipay.com/shoaibmalik786 "Donate weekly to this project using Gratipay")
+[![Gratipay donate button](https://img.shields.io/gratipay/shoaibmalik786.svg)](https://gratipay.com/shoaibmalik786 "Donate weekly to this project using Gratipay")
+[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](https://flattr.com/submit/auto?user_id=shoaibmalik786&url=https%3A%2F%2Fgithub.com%2Fshoaibmalik786%2Fzaakpay_ruby "Donate monthly to this project using Flattr")
 
 
 Currently the donations will be used to cover the hosting costs (domain name etc).
