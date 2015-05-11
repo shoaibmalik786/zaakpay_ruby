@@ -149,3 +149,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Donations and sponsoring
+
+If you want to support this project please visit the Gittip and Flattr pages.
+
+[![Gittip donate button](https://img.shields.io/gratipay/bevry.svg)](https://gratipay.com/shoaibmalik786 "Donate weekly to this project using Gratipay")
+
+
+Currently the donations will be used to cover the hosting costs (domain name etc).
