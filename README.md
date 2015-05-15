@@ -37,7 +37,7 @@ gem 'zaakpay_ruby'
 Or Use the latest build from
 
 ```ruby
-gem 'zaak_pay_ruby', github: 'shoaibmalik786/zaakpay_ruby'
+gem 'zaakpay_ruby', github: 'shoaibmalik786/zaakpay_ruby'
 ```
 
 And then execute:
