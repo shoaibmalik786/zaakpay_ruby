@@ -1,4 +1,7 @@
 require "zaakpay_ruby/version"
+require "zaakpay_ruby/request"
+require "zaakpay_ruby/response"
+require "zaakpay_ruby/transaction"
 
 module ZaakpayRuby
 
@@ -51,39 +54,4 @@ module ZaakpayRuby
     sorted_params_hash
   end
 
-  # This class is for wrappers around the ZaakpayRuby request.
-  class Request
-    attr_reader :params, :all_params, :checksum
-
-    def initialize(args_hash)
-      @params = args_hash
-      @checksum = ZaakpayRuby.generate_checksum(@params)
-      @all_params = {}.merge(@params).merge({'checksum' => @checksum })
-    end
-
-  end
-
-  # This class creates wrappers around the Zaakpay response
-  class Response
-    attr_reader :params, :all_params, :posted_checksum, :checksum
-
-    def initialize(args_str)
-      @all_params = Rack::Utils.parse_query(args_str)
-      @posted_checksum = @all_params['checksum']
-      @params = @all_params.reject{|k,v| k=='checksum'}
-    end
-
-    def valid?
-      @checksum = ZaakpayRuby.generate_checksum(@params)
-      @posted_checksum == @checksum
-    end
-
-  end
-
-  class Transaction
-    def self.sale(options={})
-      zr = ZaakpayRuby::Request.new(options)
-      return zr.all_params
-    end
-  end
 end
